@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The King of Thailand Birthplace Foundation | KTBF</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200;0,700;1,400&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --res-blue: #212C7E;
+            --deep-gold: #967D44;
+            --bg-white: #FFFFFF;
+            --hairline: #E5E5E5;
+            --text-main: #1A1A1A;
+            --ease: cubic-bezier(0.19, 1, 0.22, 1);
+            --glow: 0 10px 30px rgba(33, 44, 126, 0.2);
+        }
+
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            text-decoration: none !important; /* Global removal of underlines */
+        }
+
+        body {
+            background-color: var(--bg-white);
+            color: var(--text-main);
+            font-family: 'Crimson Pro', serif;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- INTERACTIVE TEXT EFFECTS --- */
+        .nav-link, .brand-link, .social-link {
+            transition: all 0.5s var(--ease);
+            display: inline-block;
+        }
+
+        .nav-link:hover, .social-link:hover {
+            text-shadow: 0 0 15px rgba(33, 44, 126, 0.3);
+            color: var(--res-blue) !important;
+            transform: translateY(-1px);
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed; top: 0; width: 100%;
+            padding: 0 5%;
+            height: 90px;
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 1000;
+            background: white;
+            border-bottom: 1px solid var(--hairline);
+        }
+
+        .brand-link { display: flex; align-items: center; gap: 15px; }
+        .brand-link img { height: 45px; width: auto; }
+        .brand-title {
+            font-family: 'Crimson Pro', serif;
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            color: var(--res-blue);
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .nav-right { display: flex; align-items: center; gap: 40px; }
+        .nav-link {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            color: var(--text-main);
+            text-transform: uppercase;
+        }
+
+        /* --- NMAA KINETIC BUTTONS --- */
+        /* Text color is locked and will not change on hover */
+        .nmaa-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--res-blue);
+            color: white !important; 
+            font-family: 'Lato', sans-serif;
+            font-weight: 900;
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            border: 1px solid var(--res-blue);
+            cursor: pointer;
+            transition: transform 0.6s var(--ease), box-shadow 0.6s var(--ease), background-color 0.6s var(--ease);
+        }
+
+        .nmaa-btn:hover {
+            background-color: #161e5a; 
+            transform: translateY(-4px);
+            box-shadow: var(--glow);
+            /* Text remains white */
+        }
+
+        .nmaa-btn-outline {
+            background: transparent;
+            color: var(--res-blue) !important;
+            border: 1px solid var(--res-blue);
+        }
+
+        .nmaa-btn-outline:hover {
+            background: rgba(33, 44, 126, 0.04);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            /* Text remains blue */
+        }
+
+        /* --- HERO --- */
+        .hero {
+            margin-top: 90px;
+            height: 80vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-bottom: 1px solid var(--hairline);
+        }
+
+        .hero-text {
+            padding: 8% 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-right: 1px solid var(--hairline);
+        }
+
+        .hero-title {
+            font-size: clamp(3.5rem, 6vw, 5.5rem);
+            color: var(--res-blue);
+            font-weight: 700;
+            font-style: italic;
+            line-height: 0.95;
+            margin-bottom: 30px;
+            letter-spacing: -2px;
+        }
+
+        .hero-subtext {
+            font-size: 1.4rem;
+            font-weight: 200;
+            color: #444;
+            max-width: 500px;
+            margin-bottom: 40px;
+        }
+
+        .hero-image {
+            background: url('https://www.ktbfoundation.org/wp-content/uploads/2025/11/cropped-KTBF-Logo.4-transparent-1.png') center no-repeat;
+            background-size: 50%;
+            background-color: #fafafa;
+        }
+
+        /* --- CONTENT MODULES --- */
+        .section-module {
+            padding: 120px 10%;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 80px;
+            border-bottom: 1px solid var(--hairline);
+        }
+
+        .module-label h2 {
+            font-family: 'Lato';
+            font-size: 2.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            line-height: 1;
+            color: var(--res-blue);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 80px 5% 40px;
+            background: #FDFDFD;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding-bottom: 60px;
+            border-bottom: 1px solid var(--hairline);
+        }
+
+        .social-wrap { display: flex; gap: 35px; }
+
+        .footer-bottom {
+            padding-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Lato';
+            font-size: 0.7rem;
+            letter-spacing: 1.5px;
+            opacity: 0.5;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 1024px) {
+            .hero, .section-module { grid-template-columns: 1fr; }
+            .hero-text { border-right: none; border-bottom: 1px solid var(--hairline); }
+            .hero-image { height: 350px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="https://www.ktbfoundation.org/" class="brand-link">
+            <img src="https://www.ktbfoundation.org/wp-content/uploads/2025/11/cropped-KTBF-Logo.4-transparent-1-32x32.png" alt="KTBF">
+            <span class="brand-title">The King of Thailand<br>Birthplace Foundation</span>
+        </a>
+        <div class="nav-right">
+            <a href="#" class="nav-link">The Legacy</a>
+            <a href="#" class="nav-link">Our Programs</a>
+            <a href="#" class="nmaa-btn">Donate</a>
+        </div>
+    </nav>
+
+    <main>
+        <header class="hero">
+            <div class="hero-text">
+                <span style="font-family:'Lato'; letter-spacing: 6px; color: var(--deep-gold); font-size: 0.7rem; text-transform: uppercase; margin-bottom: 20px;">Cambridge • Massachusetts</span>
+                <h1 class="hero-title">A Bridge Across<br>Two Nations.</h1>
+                <p class="hero-subtext">
+                    Preserving the cultural bridge between the United States and Thailand, honoring the legacy of King Bhumibol Adulyadej.
+                </p>
+                <div>
+                    <a href="#" class="nmaa-btn nmaa-btn-outline">Explore the History</a>
+                </div>
+            </div>
+            <div class="hero-image"></div>
+        </header>
+
+        <section class="section-module">
+            <div class="module-label">
+                <h2>Follow the Trail of Thai Royalty</h2>
+            </div>
+            <div class="module-body">
+                <p style="font-size: 1.3rem; margin-bottom: 30px;">The King of Thailand Birthplace Foundation (KTBF) is a 501(c)(3) non-profit organization dedicated to fostering cultural understanding through the preservation of historic sites in Massachusetts.</p>
+                <p style="font-size: 1rem; opacity: 0.6; font-family: 'Lato'; margin-bottom: 40px;">From the landmarks in Cambridge to the commemorative squares in Gloucester, we ensure the remarkable journey of the Thai Royal Family remains a vital part of American history.</p>
+                <a href="#" class="nmaa-btn">Join Our Mission</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-top">
+            <div>
+                <h3 style="font-family: 'Crimson Pro'; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 15px; color: var(--res-blue);">KTBF</h3>
+                <p style="max-width: 400px; font-size: 1rem; opacity: 0.5;">Honoring the legacy; preserving Thai history.</p>
+            </div>
+            <div class="social-wrap">
+                <a href="#" class="social-link" style="font-family:'Lato'; font-weight:900; font-size:0.7rem; letter-spacing:2px; color:var(--text-main);">FACEBOOK</a>
+                <a href="#" class="social-link" style="font-family:'Lato'; font-weight:900; font-size:0.7rem; letter-spacing:2px; color:var(--text-main);">INSTAGRAM</a>
+                <a href="#" class="social-link" style="font-family:'Lato'; font-weight:900; font-size:0.7rem; letter-spacing:2px; color:var(--text-main);">LINKEDIN</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 The King of Thailand Birthplace Foundation. All rights reserved.</p>
+            <p>Formal Integrity • Historical Preservation</p>
+        </div>
+    </footer>
+
+</body>
+</html>
